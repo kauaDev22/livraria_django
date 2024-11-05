@@ -17,9 +17,9 @@ from core.views import LivroViewSet
 
 router = DefaultRouter()
 
-router.register(r"Livro", LivroViewSet, basename="livro")
-router.register(r"autor", AutorViewSet, basename="autor")
-router.register(r"editora", EditoraViewSet, basename="editora")
+router.register(r"livros", LivroViewSet, basename="livros")
+router.register(r"autores", AutorViewSet, basename="autores")
+router.register(r"editoras", EditoraViewSet, basename="editoras")
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"usuarios", UserViewSet, basename="usuarios")
 
