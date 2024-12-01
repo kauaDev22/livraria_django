@@ -15,6 +15,7 @@ from core.views import CategoriaViewSet
 from core.views import EditoraViewSet
 from core.views import AutorViewSet
 from core.views import LivroViewSet
+from core.views import CompraViewSet
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -23,10 +24,12 @@ from uploader.router import router as uploader_router
 router = DefaultRouter()
 
 router.register(r"livros", LivroViewSet, basename="livros")
+router.register(r"compras", CompraViewSet, basename="compras")
 router.register(r"autores", AutorViewSet, basename="autores")
 router.register(r"editoras", EditoraViewSet, basename="editoras")
-router.register(r"categorias", CategoriaViewSet)
+router.register(r"categorias", CategoriaViewSet, basename="categorias")
 router.register(r"usuarios", UserViewSet, basename="usuarios")
+
 
 
 urlpatterns = [
