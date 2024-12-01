@@ -60,3 +60,4 @@ class TokenAuthentication(authentication.BaseAuthentication):
             raise AuthenticationFailed(e.message) from e
 
         return psg_user_id
+

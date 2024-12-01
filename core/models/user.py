@@ -1,6 +1,7 @@
 """
-Database models.
+Database models
 """
+from uploader.models import  Image
 
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -9,7 +10,6 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
 
 class UserManager(BaseUserManager):
     """Manager for users."""
@@ -80,3 +80,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
+
+
+    foto = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        default=None,
+    )

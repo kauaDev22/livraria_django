@@ -7,12 +7,12 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core import models
-from core.models import Autor, Categoria, Editora, Livro
+from core.models import Autor, Categoria, Editora, Livro, User
 
 
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
-
+    (_("Personal Info"), {"fields": ("name","foto")})
     ordering = ["id"]
     list_display = ["email", "name"]
     fieldsets = (
@@ -51,6 +51,7 @@ class UserAdmin(BaseUserAdmin):
         ),
     )
 
+admin.site.register(User)
 ...
 @admin.register(Autor)
 class AutorAdmin(admin.ModelAdmin):
